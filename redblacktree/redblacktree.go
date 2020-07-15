@@ -1,38 +1,55 @@
 package redblacktree
 
-// record meta data here
-type tree struct {
+//Tree record redblack meta data here
+type Tree struct {
 	size int64
 	root *Node
 }
 
-// record node info
+//Node record node info
 type Node struct {
-	key interface{}
-	val interface{}
-	color Color
-	left,right,parent *Node
+	key                 interface{}
+	val                 interface{}
+	color               color
+	left, right, parent *Node
 }
 
-type Color bool
+type color bool
 
 const (
-	RED   Color= true
-	BLACK Color= false
+	//RED mark the tri-node
+	RED color = true
+	//BLACK mark the double node
+	BLACK color = false
 )
 
-func Init() {
-	return &tree{}
+//Init init the redblacktree
+func Init() *Tree {
+	return &Tree{}
 }
 
-func (t *tree)Size() int64 {
+//Size ret the size of the tree
+func (t *Tree) Size() int64 {
 	return t.size
 }
 
-func (t *tree) Get(key interface{}) interface{} {
+//Get ret the val,the key mark
+func (t *Tree) Get(key interface{}) interface{} {
+
+	return "test for locate"
+}
+
+//Put put key and val into the tree
+func (t *Tree) Put(key interface{}, val interface{}) {
 
 }
 
-func (t *tree) Put(key interface{}, val interface{}) {
+//Del del the val key point to
+func (t *Tree) Del(key interface{}) bool {
+
+	return true
+}
+
+func (t *Tree) setColor() {
 
 }
